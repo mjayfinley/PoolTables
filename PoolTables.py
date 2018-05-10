@@ -1,13 +1,9 @@
-import datetime
-from time import strftime
+import time
 
 table_setup = ['Table 1','Table 2','Table 3','Table 4','Table 5','Table 6','Table 7', 'Table 8', 'Table 9','Table 10','Table 11','Table 12']
 tables = []
 table_status = "Occupied"
-start_time = datetime.datetime.now()
-current_time = datetime.datetime.now()
-active_time = datetime.datetime.now()
-end_time = datetime.datetime.now()
+FMT = '%H:%M:%S'
 rate = 10.00
 
 #class creation for Table
@@ -35,42 +31,50 @@ def assign_table():
         #tables[0].table_active_time.append(active_time())
     elif userInput == 2:
         tables[1].table_status = table_status
+        tables[1].table_start_time.append(start_time())
     elif userInput == 3:
         tables[2].table_status = table_status
+        tables[2].table_start_time.append(start_time())
     elif userInput == 4:
         tables[3].table_status = table_status
+        tables[3].table_start_time.append(start_time())
     elif userInput == 5:
         tables[4].table_status = table_status
+        tables[4].table_start_time.append(start_time())
     elif userInput == 6:
         tables[5].table_status = table_status
+        tables[5].table_start_time.append(start_time())
     elif userInput == 7:
         tables[6].table_status = table_status
+        tables[6].table_start_time.append(start_time())
     elif userInput == 8:
         tables[7].table_status = table_status
+        tables[7].table_start_time.append(start_time())
     elif userInput == 9:
         tables[8].table_status = table_status
+        tables[8].table_start_time.append(start_time())
     elif userInput == 10:
         tables[9].table_status = table_status
+        tables[9].table_start_time.append(start_time())
     elif userInput == 11:
         tables[10].table_status = table_status
+        tables[10].table_start_time.append(start_time())
     elif userInput == 12:
         tables[11].table_status = table_status
+        tables[11].table_start_time.append(start_time())
     else:
         print("\n \n ##Table does not exist. Please choose number 1-12.##")
     return show_tables()
 
 def start_time():
-    start_time = datetime.datetime.now()
-    return start_time
+    begin_time = time.time()
+    return time.strftime("%H:%M:%S", time.localtime(begin_time))
 
-#def active_time():
-#    current_time = datetime.datetime.now()
-#    active_time = (current_time - tables[0].table_start_time).total_seconds()
-#    return active_time
+def active_time():
+    pass
 
 def end_time():
-    now = datetime.datetime.now()
-    end_time = datetime.datetime.strptime(now)
+    pass
 
 def close_table():
     pass
@@ -89,16 +93,27 @@ def show_tables():
     print(f'          Time started: {tables[0].table_start_time}')
     #print(f'          Time active: {tables[0].table_active_time}')
     print(f'Table 2 : {tables[1].table_status}')
+    print(f'          Time started: {tables[1].table_start_time}')
     print(f'Table 3 : {tables[2].table_status}')
+    print(f'          Time started: {tables[2].table_start_time}')
     print(f'Table 4 : {tables[3].table_status}')
+    print(f'          Time started: {tables[3].table_start_time}')
     print(f'Table 5 : {tables[4].table_status}')
+    print(f'          Time started: {tables[4].table_start_time}')
     print(f'Table 6 : {tables[5].table_status}')
+    print(f'          Time started: {tables[5].table_start_time}')
     print(f'Table 7 : {tables[6].table_status}')
+    print(f'          Time started: {tables[6].table_start_time}')
     print(f'Table 8 : {tables[7].table_status}')
+    print(f'          Time started: {tables[7].table_start_time}')
     print(f'Table 9 : {tables[8].table_status}')
+    print(f'          Time started: {tables[8].table_start_time}')
     print(f'Table 10: {tables[9].table_status}')
+    print(f'          Time started: {tables[9].table_start_time}')
     print(f'Table 11: {tables[10].table_status}')
+    print(f'          Time started: {tables[10].table_start_time}')
     print(f'Table 12: {tables[11].table_status}')
+    print(f'          Time started: {tables[11].table_start_time}')
     print('------------------------------------')
     print('\n \n')
     adminInput()
