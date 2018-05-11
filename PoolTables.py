@@ -18,11 +18,9 @@ class Table:
         self.rate = 0.0
 
 def open_tables():
-    table_setup = ['Table 1','Table 2','Table 3','Table 4','Table 5','Table 6','Table 7', 'Table 8', 'Table 9','Table 10','Table 11','Table 12']
-    num_of_tables = 0
-    while num_of_tables < len(table_setup):
-        tables.append(Table(table_setup[num_of_tables]))
-        num_of_tables += 1
+    for index in range(1,13):
+        table_setup = Table(index)
+        tables.append(table_setup)
 
 def assign_table():
     #try statement?
@@ -35,7 +33,6 @@ def assign_table():
         tables[table].table_display_active_time = "00:00"
     else:
         print("\n \n \n ##Table is currently Occupied, please choose another table##")
-    return show_tables()
 
 class DeltaTemplate(Template):
     delimiter = '%'
@@ -58,7 +55,6 @@ def active_time():
             tables[i].table_display_active_time = strfdelta(tables[i].table_active_time, '%H:%M')
         else:
             tables[i].table_display_active_time = ' '
-    return show_tables()
 
 
 def close_table():
@@ -72,7 +68,6 @@ def close_table():
         tables[table].table_display_end_time = tables[table].table_end_time.strftime('%H:%M')
     else:
         print("\n \n \n ##Table is already open!##")
-    return show_tables()
 
 def change_rate():
     pass
@@ -97,24 +92,24 @@ def adminInput():
     print("    2. Close out table")
     print("    3. Change hourly rate")
     print("    4. Email report")
-    print("    5. Refresh Tables")
-    print("    6. Quit Program")
+    print("    5. Quit Program")
     action = input()
 
     if action == '1':
         assign_table()
+        show_tables()
     elif action == '2':
         close_table()
+        show_tables()
     elif action == '3':
         pass
     elif action == '4':
         pass
     elif action == '5':
-        active_time()
-    elif action == '6':
         exit
         print("Please press return to confirm quit.")
     else:
+        active_time()
         show_tables()
 
 open_tables()
