@@ -22,14 +22,14 @@ class Admin:
 
     def choose_table(self,table_number):
         if table_number not in range(len(self.table_list)):
-            print("Table does not exist, please choose a Table 1-12.")
+            print("\n \n \n \n ***Table does not exist, please choose a Table 1-12.***")
         else:
             self.table_list[table_number].assign_table()
 
 
     def close_out_table(self,table_number):
         if table_number not in range(len(self.table_list)):
-            print("Table does not exist, please choose a Table 1-12.")
+            print("\n \n \n \n ***Table does not exist, please choose a Table 1-12.***")
         else:
             self.table_list[table_number].charge_table()
             self.table_list[table_number].reopen_table()

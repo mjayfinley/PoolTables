@@ -15,19 +15,58 @@ class Menu:
 
 
         if self.menu_choice == '1':
-            userInput = int(input("Please enter the table number you wish to assign: "))
-            self.manager.choose_table(userInput - 1)
-            self.manager.show_tables()
-            self.menu()
+            try:
+                userInput = int(input("Please enter the table number you wish to assign: "))
+            except ValueError:
+                #does not print for some reason
+                print("\n \n \n \n **Invalid table number, please try again.**")
+            else:
+                if userInput not in range(len(self.manager.table_list)):
+                    self.manager.choose_table(userInput - 1)
+                    self.menu()
+                elif self.manager.table_list[userInput - 1].table_status == "Occupied":
+                    print("\n \n \n \n ***Table is already taken***")
+                    self.manager.choose_table(userInput - 1)
+                    self.menu()
+                else:
+                    self.manager.choose_table(userInput - 1)
+                    self.manager.show_tables()
+                    self.menu()
+            finally:
+                self.manager.show_tables()
+                self.menu()
+
+
         elif self.menu_choice == '2':
-            userInput = int(input("Please enter the table you wish to close out: "))
-            self.manager.close_out_table(userInput - 1)
-            self.manager.show_tables()
-            self.menu()
+            try:
+                userInput = int(input("Please enter the table you wish to close out: "))
+            except ValueError:
+                print("\n \n \n \n **Invalid table number, please try again.**")
+            else:
+                if userInput not in range(len(self.manager.table_list)):
+                    self.manager.close_out_table(userInput - 1)
+                    self.menu()
+                else:
+                    self.manager.close_out_table(userInput - 1)
+                    self.manager.show_tables()
+                    self.menu()
+            finally:
+                self.manager.show_tables()
+                self.menu()
+
         elif self.menu_choice == '3':
-            self.manager.change_rate()
-            self.manager.show_tables()
-            self.menu()
+            try:
+                userInput = int(input("Please enter the new rate: "))
+            except ValueError:
+                print("\n \n \n \n **Invalid rate, please try again.**")
+            else:
+                self.manager.change_rate(userInput)
+                self.manager.show_tables()
+                self.menu()
+            finally:
+                self.manager.show_tables()
+                self.menu()
+
         elif self.menu_choice == '4':
             pass
         elif self.menu_choice == '5':
