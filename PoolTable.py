@@ -8,9 +8,11 @@ class Table:
         self.table_start_time = 0
         self.table_total_time =  0
         self.table_end_time = 0
+        self.table_active_time = 0
         self.table_display_start_time = ' '
         self.table_display_total_time = ' '
         self.table_display_end_time = ' '
+        self.table_display_active_time = ' '
         self.rate = rate
         self.charge = 0.0
 
@@ -22,6 +24,7 @@ class Table:
             self.table_display_start_time = datetime.datetime.now().strftime('%H:%M:%S')
 
 
+
     def reopen_table(self):
         if self.table_status == "Occupied":
             self.table_status = "Not Occupied"
@@ -30,10 +33,14 @@ class Table:
             self.table_end_time = time.time()
             self.table_display_end_time = datetime.datetime.now().strftime('%H:%M:%S')
             self.table_total_time = self.table_end_time - self.table_start_time
-            self.table_display_total_time = datetime.datetime.now().strftime('%H:%M:%S')
+            self.table_display_total_time = str(round((self.table_total_time)/60,2)) + " minutes"
         else:
             if self.table_status == "Closed":
                 self.table_status = "Not Occupied"
+
+    def active_time(self):
+        self.table_active_time = time.time() - self.table_start_time
+        self.table_display_active_time = str(round((self.table_active_time)/60,2))
 
 
     def close_tables(self):

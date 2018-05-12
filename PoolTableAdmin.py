@@ -35,6 +35,12 @@ class Admin:
             self.table_list[table_number].reopen_table()
 
 
+    def display_active_time(self):
+        for table in range(len(self.table_list)):
+            if self.table_list[table].table_start_time != 0:
+                self.table_list[table].active_time()
+
+
     def show_tables(self):
         print('\n \n \n \n')
         print(f'The current rate is ${self.rate} per hour.')
@@ -44,6 +50,7 @@ class Admin:
         for table in self.table_list:
             print(f'Table {table.table_number} : {table.table_status}')
             print(f'          Time started: {table.table_display_start_time}')
+            print(f'        Time active: {table.table_display_active_time}')
         print('------------------------------------')
         print('\n \n')
 
@@ -54,4 +61,4 @@ class Admin:
         print(" 2. Close out table to re-open")
         print(" 3. Change hourly rate")
         print(" 4. Create report")
-        print(" 5. Quit program")
+        print(" 5.  Quit program")
