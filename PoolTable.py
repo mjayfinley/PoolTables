@@ -28,9 +28,6 @@ class Table:
     def reopen_table(self):
         if self.table_status == "Occupied":
             self.table_status = "Not Occupied"
-            self.table_start_time = 0
-            self.table_display_start_time = ' '
-            self.table_display_active_time = ' '
             self.table_end_time = time.time()
             self.table_display_end_time = datetime.datetime.now().strftime('%H:%M:%S')
             self.table_total_time = self.table_end_time - self.table_start_time
@@ -38,6 +35,17 @@ class Table:
         else:
             if self.table_status == "Closed":
                 self.table_status = "Not Occupied"
+
+    def time_reset(self):
+        self.table_start_time = 0
+        self.table_total_time =  0
+        self.table_end_time = 0
+        self.table_active_time = 0
+        self.table_display_start_time = ' '
+        self.table_display_total_time = ' '
+        self.table_display_end_time = ' '
+        self.table_display_active_time = ' '
+        self.charge = 0.0
 
     def active_time(self):
         self.table_active_time = time.time() - self.table_start_time
@@ -51,5 +59,5 @@ class Table:
 
 
     def charge_table(self):
-        self.charge = round((self.rate/60) * (self.table_total_time/60), 2)
-        print(f"\n \n \n \n **This person owes ${self.charge} for table {self.table_number}**")
+        self.charge = round((self.rate/60) * (self.table_total_time/60),2)
+        print(f"\n \n **This person owes ${self.charge} for table {self.table_number}**")
