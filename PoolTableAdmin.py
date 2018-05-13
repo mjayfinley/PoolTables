@@ -49,8 +49,7 @@ class Admin:
         print('------------------------------------')
         for table in self.table_list:
             print(f'Table {table.table_number} : {table.table_status}')
-            print(f'          Time started: {table.table_display_start_time}')
-            print(f'        Time active: {table.table_display_active_time}')
+            print(f'          Time started: {table.table_display_start_time}               Time active: {table.table_display_active_time}')
         print('------------------------------------')
         print('\n \n')
 

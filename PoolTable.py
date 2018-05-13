@@ -30,6 +30,7 @@ class Table:
             self.table_status = "Not Occupied"
             self.table_start_time = 0
             self.table_display_start_time = ' '
+            self.table_display_active_time = ' '
             self.table_end_time = time.time()
             self.table_display_end_time = datetime.datetime.now().strftime('%H:%M:%S')
             self.table_total_time = self.table_end_time - self.table_start_time
