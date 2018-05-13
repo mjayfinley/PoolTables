@@ -52,4 +52,4 @@ class Table:
 
     def charge_table(self):
         self.charge = round((self.rate/60) * (self.table_total_time/60), 2)
-        print(f"This person owes ${self.charge} for {self.table_display_total_time} on table {self.table_number}")
+        print(f"\n \n \n \n **This person owes ${self.charge} for table {self.table_number}**")

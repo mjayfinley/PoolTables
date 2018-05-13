@@ -11,9 +11,6 @@ class Menu:
         self.menu_choice = input()
 
 
-
-
-
         if self.menu_choice == '1':
             try:
                 userInput = int(input("Please enter the table number you wish to assign: "))
@@ -69,6 +66,7 @@ class Menu:
             pass
 
         elif self.menu_choice == '5':
+            quit
             exit
 
         else:

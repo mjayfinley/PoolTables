@@ -60,4 +60,4 @@ class Admin:
         print(" 2. Close out table to re-open")
         print(" 3. Change hourly rate")
         print(" 4. Create report")
-        print(" 5.  Quit program")
+        print(" 5. Quit program")
