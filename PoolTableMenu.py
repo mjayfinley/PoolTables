@@ -47,6 +47,8 @@ class Menu:
                         self.manager.close_out_table(userInput - 1)
                         self.manager.append_report(userInput - 1)
                         self.menu()
+                    elif self.manager.table_list[userInput - 1].table_status == "Not Occupied":
+                        print("\n \n ***Table is Not Occupied***")
                     else:
                         self.manager.close_out_table(userInput - 1)
                         self.manager.append_report(userInput - 1)
@@ -70,6 +72,12 @@ class Menu:
                     self.menu()
             elif self.menu_choice == '4':
                 print("\n \n ***Goodbye***")
+                for table in self.manager.table_list:
+                    if self.manager.table_list[table.table_number - 1].table_status == "Occupied":
+                        self.manager.close_out_table(
+                            self.manager.table_list[table.table_number - 1].table_number)
+                        self.manager.append_report(
+                            self.manager.table_list[table.table_number - 1].table_number)
             else:
                 print("\n \n ***Please select from the list***")
                 self.manager.display_active_time()
