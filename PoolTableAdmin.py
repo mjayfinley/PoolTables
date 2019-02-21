@@ -68,13 +68,13 @@ class Admin:
         print('\n \n \n \n')
         print(f'The current rate is ${self.rate} per hour.')
         print('\n \n')
-        print('-----------List of Tables-----------')
-        print('------------------------------------')
+        print('---------------------List of Tables----------------------')
+        print('---------------------------------------------------------')
         for table in self.table_list:
             print(f'Table {table.table_number} : {table.table_status}')
             print(
                 f'          Time started: {table.table_display_start_time}               Time active: {table.table_display_active_time}')
-        print('------------------------------------')
+        print('---------------------------------------------------------')
         print('\n \n')
 
     def adminInput(self):

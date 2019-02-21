@@ -1,0 +1,64 @@
+
+ 
+ 
+Table number:             1
+
+Start time:               14:36:41
+
+End time:                 11:15:36
+
+Total time:               1238.92 minutes
+
+Rate:                     $30.0 per hour 
+
+Total cost:               $619.46
+
+ 
+
+ 
+ 
+Table number:             2
+
+Start time:               14:36:40
+
+End time:                 11:15:39
+
+Total time:               1238.99 minutes
+
+Rate:                     $30.0 per hour 
+
+Total cost:               $619.49
+
+ 
+
+ 
+ 
+Table number:             3
+
+Start time:               15:29:36
+
+End time:                 11:15:41
+
+Total time:               1186.08 minutes
+
+Rate:                     $30.0 per hour 
+
+Total cost:               $593.04
+
+ 
+
+ 
+ 
+Table number:             4
+
+Start time:               11:11:56
+
+End time:                 11:15:43
+
+Total time:               3.78 minutes
+
+Rate:                     $30.0 per hour 
+
+Total cost:               $1.89
+
+ 
